@@ -1,0 +1,45 @@
+0 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'express' ]
+1 info using npm@7.11.2
+2 info using node@v16.1.0
+3 timing npm:load:whichnode Completed in 2ms
+4 timing config:load:defaults Completed in 3ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/site/.npmrc Completed in 2ms
+10 timing config:load:project Completed in 3ms
+11 timing config:load:file:/root/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/usr/local/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:validate Completed in 0ms
+16 timing config:load:credentials Completed in 2ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 13ms
+19 timing npm:load:configload Completed in 14ms
+20 timing npm:load:setTitle Completed in 0ms
+21 timing npm:load:setupLog Completed in 3ms
+22 timing npm:load:cleanupLog Completed in 4ms
+23 timing npm:load:configScope Completed in 0ms
+24 timing npm:load:projectScope Completed in 0ms
+25 timing npm:load Completed in 24ms
+26 timing config:load:flatten Completed in 6ms
+27 notice [40m[37m[39m[49m
+27 notice [40m[37mNew [31mmajor[39m[37m version of npm available! [31m7.11.2[39m[37m -> [32m8.3.2[39m[37m[39m[49m
+27 notice [40m[37mChangelog: [36mhttps://github.com/npm/cli/releases/tag/v8.3.2[39m[37m[39m[49m
+27 notice [40m[37mRun [32mnpm install -g npm@8.3.2[39m[37m to update![39m[49m
+27 notice [40m[37m[39m[49m
+28 verbose stack Error: ENOENT: no such file or directory, open '/site/package.json'
+29 verbose cwd /site
+30 verbose Linux 5.4.0-91-generic
+31 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "express"
+32 verbose node v16.1.0
+33 verbose npm  v7.11.2
+34 error code ENOENT
+35 error syscall open
+36 error path /site/package.json
+37 error errno -2
+38 error enoent ENOENT: no such file or directory, open '/site/package.json'
+39 error enoent This is related to npm not being able to find a file.
+40 verbose exit -2

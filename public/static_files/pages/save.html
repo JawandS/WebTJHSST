@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang='en'>
+    
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="css\defaultstyle.css">
+        <title>2023jsingh - Director</title>
+    </head>
+    
+    <body>
+        <h1>Please Select an Option</h1>
+        
+        <script>
+            var count = 0;
+            
+            function myFunction() {
+              count++;
+              document.getElementById("counter").innerHTML = count;
+            }
+            
+            function onExit(){
+                console.log("exited")
+                alert("bad")
+                window.open('mailto:jawandbusiness@gmail.com');
+            }
+              window.onbeforeunload = confirmExit;
+                function confirmExit(){
+                    onExit()
+                    return ""
+                }
+        </script>
+        
+    </body>

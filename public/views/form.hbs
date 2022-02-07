@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Madlibs Input</title>
+    	<link rel="stylesheet" href="css\defaultstyle.css">
+    </head>
+    <body>
+        <form id="form" action="/2023jsingh/story_render" method="POST">
+            
+            <label for="adj_one">Adjective:</label><br><br>
+            <input type="text" id="adj_one" name="adj_one"><br><br>
+          
+            <label for="adj_two">Adjective:</label><br><br>
+            <input type="text" id="adj_two" name="adj_two"><br><br>
+          
+            <label for="adj_three">Adjective:</label><br><br>
+            <input type="text" id="adj_three" name="adj_three"><br><br>
+          
+            <label for="noun_one">Noun:</label><br><br>
+            <input type="text" id="noun_one" name="noun_one"><br><br>
+          
+            <label for="noun_two">Noun:</label><br><br>
+            <input type="text" id="noun_two" name="noun_two"><br>
+          
+            <label for="image">Select an image:</label><br><br>
+            <select id="image" name="image">
+                <option value="bird.jpg">Bird</option>
+                <option value="lion.jpg">Lion</option>
+                <option value="tree.jpg">Tree</option>
+            </select><br><br>
+            
+            <label for="enlarge">Enlarge:</label><br><br>
+            <input type="checkbox" id="enlarge" name="enlarge"><br><br>
+          
+            <input type="submit" value="Submit">
+        </form> 
+    </body>
+</html>

@@ -1,0 +1,66 @@
+0 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install', 'fslibrary' ]
+1 info using npm@7.11.2
+2 info using node@v16.1.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/site/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 1ms
+11 timing config:load:file:/root/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/usr/local/etc/npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:validate Completed in 0ms
+16 timing config:load:credentials Completed in 1ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 9ms
+19 timing npm:load:configload Completed in 9ms
+20 timing npm:load:setTitle Completed in 0ms
+21 timing npm:load:setupLog Completed in 2ms
+22 timing npm:load:cleanupLog Completed in 3ms
+23 timing npm:load:configScope Completed in 0ms
+24 timing npm:load:projectScope Completed in 1ms
+25 timing npm:load Completed in 17ms
+26 timing config:load:flatten Completed in 4ms
+27 timing arborist:ctor Completed in 2ms
+28 timing idealTree:init Completed in 126ms
+29 timing idealTree:userRequests Completed in 2ms
+30 silly idealTree buildDeps
+31 silly fetch manifest fslibrary@*
+32 timing arborist:ctor Completed in 0ms
+33 http fetch GET 404 https://registry.npmjs.org/fslibrary 310ms
+34 http fetch GET 404 https://registry.npmjs.org/fslibrary 444ms
+35 silly placeDep ROOT fslibrary@ OK for:  want: *
+36 timing idealTree:#root Completed in 767ms
+37 timing idealTree:node_modules/fslibrary Completed in 0ms
+38 timing idealTree:buildDeps Completed in 769ms
+39 timing idealTree:fixDepFlags Completed in 1ms
+40 timing idealTree Completed in 909ms
+41 timing command:install Completed in 927ms
+42 verbose stack HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/fslibrary - Not found
+42 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-fetch/check-response.js:134:15
+42 verbose stack     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+42 verbose stack     at async Arborist.[nodeFromEdge] (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:946:19)
+42 verbose stack     at async Arborist.[buildDepStep] (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:892:11)
+42 verbose stack     at async Arborist.buildIdealTree (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:218:7)
+42 verbose stack     at async Promise.all (index 1)
+42 verbose stack     at async Arborist.reify (/usr/local/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:135:5)
+42 verbose stack     at async Install.install (/usr/local/lib/node_modules/npm/lib/install.js:137:5)
+43 verbose statusCode 404
+44 verbose pkgid fslibrary@*
+45 verbose cwd /site
+46 verbose Linux 5.4.0-91-generic
+47 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "fslibrary"
+48 verbose node v16.1.0
+49 verbose npm  v7.11.2
+50 error code E404
+51 error 404 Not Found - GET https://registry.npmjs.org/fslibrary - Not found
+52 error 404
+53 error 404 'fslibrary@*' is not in the npm registry.
+54 error 404 You should bug the author to publish it (or use the name yourself!)
+55 error 404 Note that you can also install from a
+56 error 404 tarball, folder, http url, or git url.
+57 verbose exit 1

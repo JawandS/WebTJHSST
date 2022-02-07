@@ -1,0 +1,48 @@
+h1 {
+    color: #325288;
+    font-weight: normal;
+}
+
+h3 {
+    font-weight: normal; 
+}
+
+.title {
+    text-align: center;    
+    color: #3419DE;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.mega{
+    font-size: 1000%;
+}
+
+.big{
+    font-size: 250%;
+}
+
+.links {
+    font-size: 120%;
+}
+
+.center{
+    margin-left: 50%;
+}
+
+.action:hover{
+    color: red;
+    /*font-size: 150%;*/
+}
+
+/*Enlarges the on button*/
+.on {
+    font-size: 150%;
+}
+
+strong {
+ font-weight: bold;
+}
+
+#cookieCounter{
+    size: 200%;
+}

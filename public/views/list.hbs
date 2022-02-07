@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>People List</title>
+	<link rel="stylesheet" href="css\defaultstyle.css">
+</head>
+<body>
+    <h2>There are {{number}} people:</h2>
+    <ul>
+        {{#each people}}
+            <li><span class="action">{{this}}</span></li>
+        {{/each}}
+    </ul>
+</body>
+</html>
