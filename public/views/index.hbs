@@ -4,28 +4,27 @@
     <head>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="css\defaultstyle.css">
-        <title>2023jsingh - Director</title>
+        <title>Jawand's Home Page</title>
     </head>
     
     <body>
         <div class="navbar">
-            <a class="active" href="">Home</a>
-            <a class ="button" href="https://user.tjhsst.edu/2023jsingh/views">Views</a>
-            <a class ="button" href="https://user.tjhsst.edu/2023jsingh/chance">Chance</a>
-            <a class ="button" href="https://user.tjhsst.edu/2023jsingh/delay">Delay</a>
-            <a class ="button" href="https://user.tjhsst.edu/2023jsingh/list">List</a>
-            <a class ="button" href="https://user.tjhsst.edu/2023jsingh/madlibs">Madlibs</a>
+            <a class = "active" href="">Home</a>
+            <a class = "button" href="https://user.tjhsst.edu/2023jsingh/views">Views</a>
         </div>
     
         <div class="navbar">
-            <a class="active" href="https://user.tjhsst.edu/2023jsingh/pages/about.html">About</a>
+            <a class ="active" href="https://user.tjhsst.edu/2023jsingh/labs"> Labs</a>
+            <a class ="button" href="https://user.tjhsst.edu/2023jsingh/pages/about.html">About</a>
             <a class ="button" href="https://github.com/JawandS">GitHub</a>
             <a class ="button" href="https://stackoverflow.com/users/13297560/jawand-s">Stack</a>
             <a class ="button" href="HTTPS://director.tjhsst.edu">Director</a>
         </div>
         
-        <h1>Or Click</h1>
-        <button id="counter" onclick="myFunction()" class="mega">0</button>
+        <h2>https://user.tjhsst.edu/2023jsingh/math/#</h2>
+        
+        <h2>Or Click</h2>
+        <button id="counter" onclick="myFunction()" class="mega">{{clicks}}</button>
         
         <!--<script>-->
         <!--    process.log(`running homepage script`)-->
@@ -66,7 +65,32 @@
         <!--            console.log("updated clicks");-->
         <!--        });-->
         <!--    }-->
-        <!--</script>-->
+        <script>
+            // // MYSQL SETUP
+            // var mysql = require('mysql');
+            
+            // var sql_params = {
+            //     connectionLimit : 10,
+            //     user            : process.env.DIRECTOR_DATABASE_USERNAME,
+            //     password        : process.env.DIRECTOR_DATABASE_PASSWORD,
+            //     host            : process.env.DIRECTOR_DATABASE_HOST,
+            //     port            : process.env.DIRECTOR_DATABASE_PORT,
+            //     database        : process.env.DIRECTOR_DATABASE_NAME
+            // };
+            
+            // var pool  = mysql.createPool(sql_params);
+            var clicks = {{clicks}};
+            
+            function myFunction(){
+                clicks++;
+                document.getElementById("counter").innerHTML = clicks;
+                
+                // pool.query(`UPDATE clicks SET count = ${clicks}`, function(err, result, fields) {
+                //     if (err) throw err;
+                //     console.log("updated clicks");
+                // });
+            }
+        </script>
     </body>
 </html>
 

@@ -5,6 +5,7 @@ var router = express.Router();
 var mysql = require('mysql');
 
 // https://www.w3schools.com/nodejs/nodejs_mysql.asp
+// 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
 
 var sql_params = {
   connectionLimit : 10,
@@ -17,6 +18,55 @@ var sql_params = {
 
 var pool  = mysql.createPool(sql_params);
 var visitorCount = 0;
+var clicks = 0;
+
+// SQL - get the visitor count
+pool.query('SELECT * FROM data', function(err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+    visitorCount = parseInt(result[0]['visits']);
+});
+
+// SQL - get click amount 
+pool.query('SELECT * FROM clicks', function(err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+    clicks = parseInt(result[0]['count']);
+    // document.getElementById("counter").innerHTML = clicks;
+});
+            
+console.log(`SQL run, count set to ${clicks}`)
+
+router.get('/', function(req,res){
+    visitorCount++; 
+    console.log(`Visitors: ${visitorCount}`);
+    
+    var obj = {
+     'clicks': clicks
+    };
+    
+    res.render('index.hbs', obj);
+    
+    pool.query(`UPDATE data SET visits = ${visitorCount}`, function(err, result, fields) {
+        if (err) throw err;
+        console.log("updated visitor count and rendering");
+    });
+    
+});
+
+router.get('/labs', function(req,res){
+    visitorCount++; 
+    console.log(`Visitors: ${visitorCount}`);
+    
+    var obj = {};
+    
+    res.render('labs.hbs', obj);
+    
+    pool.query(`UPDATE data SET visits = ${visitorCount}`, function(err, result, fields) {
+        if (err) throw err;
+        console.log("updated visitor count and rendering");
+    });
+});
 
 router.get('/views', function(req,res){
     visitorCount++; 
@@ -143,4 +193,6 @@ router.post('/story_render', function(req, res){
     });
 });
 
+// public decleration inside of a file
+// exports the router as a function 
 module.exports = router;

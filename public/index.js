@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // file system
-const fsLibrary  = require('fs');
+const fsLibrary = require('fs');
 
 // templating 
 var hbs = require('hbs');
@@ -20,6 +20,9 @@ app.set('view engine','hbs');
 // // -------------- routes -------------- //
 const home = require('./routes/home.js')
 app.use(home);
+
+const math = require('./routes/math.js')
+app.use(math);
 
 app.use(
     express.static('static_files')
