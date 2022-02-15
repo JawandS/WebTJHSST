@@ -7,34 +7,35 @@
 
     <body>
         <h1>Numbers</h1>
-        <button onclick="openNumber()">Click</button>
+        {{!--<button onclick="openNumber()">Click</button>--}}
         
         <form id="form" onsubmit="openNumber()">
             
             <label for="number">Number:</label><br><br>
             <input type="text" id="number" name="number"><br><br>
             
-            <label for="enlarge">JSON:</label><br><br>
-            <input type="checkbox" id="enlarge" name="enlarge"><br><br>
+            <label for="format">Format:</label><br><br>
+            <input type="text" id="format" name="format"><br><br>
             
             <input type="submit" value="Submit">
             
         </form> 
-        
-        <form onsubmit="openNumber()">
-            <label for="username">Enter username:</label> 
-            <input type="text" name="username" id="username" />
-            <input type="submit" />
-        </form>
+
         
         {{!--<button onclick = openNumber()>Enter</button>--}}
         
         <script>
             function openNumber(){
                 // alert(`https://user.tjhsst.edu/2023jsingh/math/${req.query['number']}`);
-                var val = document.getElementById("number").value;
+                var num = document.getElementById("number").value;
+                var format = document.getElementById("format").value;
+                if (format =="json"){
+                    window.open(`https://user.tjhsst.edu/2023jsingh/math/${num}?format=json`, '_blank');
+                }else{
+                    window.open(`https://user.tjhsst.edu/2023jsingh/math/${num}`, '_blank');
+                }
                 // alert(`https://user.tjhsst.edu/2023jsingh/math/${val}`);
-                console.log('open new math window');
+                // alert(`value: ${document.getElementById("json").value}`);
                 
                 // const queryString = window.location.search;
                 // console.log(queryString);
@@ -42,8 +43,6 @@
                 // const urlParams = new URLSearchParams(queryString);
                 
                 // var number = urlParams['number'];
-                
-                window.open(`https://user.tjhsst.edu/2023jsingh/math/${val}`, '_blank'); 
                 // console.log(`User went to ${number}`)
             }
             

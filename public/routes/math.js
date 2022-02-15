@@ -43,6 +43,7 @@ router.get('/math-home', function(req,res){
 router.get('/math/:num', function(req,res){
     var number = req.params.num;
     
+    if(int(number))
     var obj = {
         'number': number,
         'even': number % 2 == 0,
@@ -51,6 +52,14 @@ router.get('/math/:num', function(req,res){
         'power_three': Math.pow(number, 3),
         'power_four': Math.pow(number, 4)
     };
+    
+    var input = req.query;
+    if (Object.keys(input).includes("format")){
+        console.log(`Input to math/num ${input['format']}`);
+        if(input['format'] == 'json'){
+            res.json(obj);
+        }
+    }
     
     res.render('math.hbs', obj);
     console.log(`url number ${number}`)
