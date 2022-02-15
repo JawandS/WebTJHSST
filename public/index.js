@@ -24,6 +24,9 @@ app.use(home);
 const math = require('./routes/math.js')
 app.use(math);
 
+const links = require('./routes/links.js')
+app.use(links);
+
 app.use(
     express.static('static_files')
 );
