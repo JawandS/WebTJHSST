@@ -43,7 +43,6 @@ router.get('/math-home', function(req,res){
 router.get('/math/:num', function(req,res){
     var number = req.params.num;
     
-    if(int(number))
     var obj = {
         'number': number,
         'even': number % 2 == 0,
