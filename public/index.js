@@ -18,18 +18,56 @@ var hbs = require('hbs');
 app.set('view engine','hbs');
 
 // // -------------- routes -------------- //
-const home = require('./routes/home.js')
-app.use(home);
-
-const math = require('./routes/math.js')
-app.use(math);
-
-const links = require('./routes/links.js')
-app.use(links);
-
 app.use(
     express.static('static_files')
 );
+
+// // MYSQL SETUP
+var mysql = require('mysql');
+
+var sql_params = {
+  connectionLimit : 10,
+  user            : process.env.DIRECTOR_DATABASE_USERNAME,
+  password        : process.env.DIRECTOR_DATABASE_PASSWORD,
+  host            : process.env.DIRECTOR_DATABASE_HOST,
+  port            : process.env.DIRECTOR_DATABASE_PORT,
+  database        : process.env.DIRECTOR_DATABASE_NAME
+};
+
+var pool = mysql.createPool(sql_params);
+var visitorCount = 0;
+var clicks = 0;
+
+// SQL - get the visitor count
+pool.query('SELECT * FROM data', function(err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+    visitorCount = parseInt(result[0]['visits']);
+});
+
+app.use((req, res, next) => {
+   visitorCount++; 
+   
+   pool.query(`UPDATE data SET visits = ?`, [visitorCount], function(err, result, fields) {
+        if (err) throw err;
+        console.log("updated visitor count in index app.use");
+        next();
+    });
+});
+
+
+// Connect to routers
+
+const home = require('./routes/home.js');
+app.use(home);
+
+const math = require('./routes/math.js');
+app.use(math);
+
+const links = require('./routes/links.js');
+app.use(links);
+
+
 
 // -------------- listener -------------- //
 // // The listener is what keeps node 'alive.' 
